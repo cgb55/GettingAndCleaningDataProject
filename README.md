@@ -14,9 +14,8 @@ included here. Both files can be read into R using `read.table()`.
 Please see the code book for explanations of the variables in each of these files and please see [3]
 for more details of the project that produced the original data.
 
-The requirement for the script is:
+The requirement for the script is to create one R script called run_analysis.R that does the following:
 
-Create one R script called run_analysis.R that does the following:
 1. Merges the training and the test sets to create one data set.
 1. Extracts only the measurements on the mean and standard deviation for each measurement.
 1. Uses descriptive activity names to name the activities in the data set.
