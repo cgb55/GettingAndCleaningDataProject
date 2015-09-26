@@ -26,6 +26,9 @@ The first 4 of these steps are not done in strict order. Instead the extraction 
 is done before merging the two sets, this is done to slightly imporve the performance by reducing the size
 of the data sets as early as possible.
 
+In the second step the decision was made to only extract those measurements that contained `mean()` or `std()`
+in their names. This resulted in 66 extracted measurements.
+
 # Reference URLs
 
 1. https://class.coursera.org/getdata-032
