@@ -14,6 +14,21 @@ included here. Both files can be read into R using `read.table()`.
 Please see the code book for explanations of the variables in each of these files and please see [3]
 for more details of the project that produced the original data.
 
+The requirement for the script is:
+
+Create one R script called run_analysis.R that does the following:
+1. Merges the training and the test sets to create one data set.
+1. Extracts only the measurements on the mean and standard deviation for each measurement.
+1. Uses descriptive activity names to name the activities in the data set.
+1. Appropriately labels the data set with descriptive variable names. 
+1. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+The first 4 of these steps are not done in strict order. Instead the extraction of the relevant measurements
+is done before merging the two sets, this is done to slightly imporve the performance by reducing the size
+of the data sets as early as possible.
+
+# Reference URLs
+
 1. https://class.coursera.org/getdata-032
 1. https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 1. http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
