@@ -46,8 +46,8 @@ run_analysis <- function() {
   featureNames <- gsub("X","InXDirection", featureNames)
   featureNames <- gsub("Y","InYDirection", featureNames)
   featureNames <- gsub("Z","InZDirection", featureNames)
-  featureNames <- gsub("^t","MeanOfTime", featureNames)
-  featureNames <- gsub("^f","MeanOfFrequency", featureNames)
+  featureNames <- gsub("^t","Time", featureNames)
+  featureNames <- gsub("^f","Frequency", featureNames)
   
   # combine the relevant columns of the two data sets by
   # row and add the feature names as column names
@@ -71,13 +71,19 @@ run_analysis <- function() {
   
   # at this point the data set 'all' represents the first
   # tidy data set required by the project, ie after step 4
+  write.table(all, "merged_data.txt", row.name=F)
 
   # group the data by subject and activity and find the means of these groups
   tidy <- group_by(all,SubjectId,ActivityName)
   tidy <- summarise_each(tidy, funs(mean))
+  # modify the feature names now they represent means
+  names(tidy) <- gsub("^Time","MeanOfTime", names(tidy))
+  names(tidy) <- gsub("^Frequency","MeanOfFrequency", names(tidy))
   
   # at this point the data set 'tidy' represents the second
   # tidy data set required by the project, ie after step 5
-
+  write.table(tidy, "means_of_merged_data.txt", row.name=F)
+  
   # return the tidy data set by default
+  tidy
 }
