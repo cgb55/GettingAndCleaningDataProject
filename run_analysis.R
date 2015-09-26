@@ -71,7 +71,8 @@ run_analysis <- function() {
   
   # at this point the data set 'all' represents the first
   # tidy data set required by the project, ie after step 4
-  write.table(all, "merged_data.txt", row.names=F)
+  # this could be written to a file by uncommenting the following line
+  # write.table(all, "merged_data.txt", row.names=F)
 
   # group the data by subject and activity and find the means of these groups
   tidy <- group_by(all,SubjectId,ActivityName)
@@ -82,8 +83,9 @@ run_analysis <- function() {
   
   # at this point the data set 'tidy' represents the second
   # tidy data set required by the project, ie after step 5
-  write.table(tidy, "means_of_merged_data.txt", row.names=F)
+  # this could be written to a file by uncommenting the following line
+  # write.table(tidy, "means_of_merged_data.txt", row.names=F)
   
-  # return the tidy data set by default
+  # return the tidy data set
   tidy
 }
