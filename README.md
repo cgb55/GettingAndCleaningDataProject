@@ -6,14 +6,6 @@ data and the code book for this data set.
 
 The script `run_analysis.R` requires the package `dplyr`.
 
-It assumes the original data, from [2], is unzipped into the same working directory as the script.
-The script writes out two files into the working directory. `merged_data.txt` represents the first
-tidy data set, `means_of_merged_data.txt` represents the second data set required and is the file
-included here. Both files can be read into R using `read.table()`.
-
-Please see the code book for explanations of the variables in each of these files and please see [3]
-for more details of the project that produced the original data.
-
 The requirement for the script is to create one R script called run_analysis.R that does the following:
 
 1. Merges the training and the test sets to create one data set.
@@ -28,6 +20,17 @@ of the data sets as early as possible.
 
 In the second step the decision was made to only extract those measurements that contained `mean()` or `std()`
 in their names. This resulted in 66 extracted measurements.
+
+The script assumes the original data, from [2], is unzipped into the same working directory as the script.
+The output from this script has been written to a file `means_of_merged_data.txt`, included in this
+repository, using:
+```
+write.table(tidy, "means_of_merged_data.txt", row.names=F)
+```
+This file can be read into R using `read.table("means_of_merged_data.txt")`.
+
+Please see the code book for explanations of the variables in this file and please see [3]
+for more details of the project that produced the original data.
 
 # Reference URLs
 
