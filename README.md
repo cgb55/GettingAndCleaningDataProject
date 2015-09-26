@@ -27,7 +27,10 @@ repository, using:
 ```
 write.table(tidy, "means_of_merged_data.txt", row.names=F)
 ```
-This file can be read into R using `read.table("means_of_merged_data.txt")`.
+This file can be read into R using:
+```
+read.table("means_of_merged_data.txt", header=TRUE)
+```
 
 Please see the code book for explanations of the variables in this file and please see [3]
 for more details of the project that produced the original data.
